@@ -1,0 +1,17 @@
+Comandos git:
+
+git status
+    Da un estatus del repositorio
+    Es como preguntarle a tu asesor financiero. Todo esta bien? o Como anda todo?
+
+Pasos para crear un repositorio:
+
+git init
+    Crea un repositorio de git en el proyecto donde se ejecute
+
+git add . 
+    Añade los archivos sin seguimiento al respositorio de git
+
+git commit -m 'mensaje descriptivo'
+    Versionar los cambios añadidos
+

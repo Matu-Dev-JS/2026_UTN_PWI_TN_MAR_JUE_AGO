@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LactanciaMiia</title>
+</head>
+<body>
+
+    <h1>Formulario de consulta - LactanciaMiia</h1>
+    
+    <form>
+    
+        <div>
+            <label for="fullname">Nombre completo:</label>
+            <input
+                type="text"
+                id="fullname"
+                name="fullname"
+                placeholder="Nombre y apellido"
+                required
+            />
+        </div>
+    
+        <div>
+            <label for="email">Email:</label>
+            <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="ejemplo@mail.com"
+                required
+            />
+        </div>
+    
+        <div>
+            <span>¿En qué etapa te encontrás?</span>
+    
+            <div>
+                <label for="embarazo">Embarazo</label>
+                <input type="radio" name="etapa" id="embarazo">
+            </div>
+    
+            <div>
+                <label for="lactancia">Lactancia</label>
+                <input type="radio" name="etapa" id="lactancia">
+            </div>
+    
+            <div>
+                <label for="destete">Destete</label>
+                <input type="radio" name="etapa" id="destete">
+            </div>
+        </div>
+    
+        <div>
+            <span>¿En qué necesitás asesoramiento?</span>
+    
+            <div>
+                <label for="embarazo_lactancia">Embarazo y lactancia</label>
+                <input type="checkbox" name="asesoramiento" id="embarazo_lactancia">
+            </div>
+    
+            <div>
+                <label for="dificultades">Dificultades al amamantar</label>
+                <input type="checkbox" name="asesoramiento" id="dificultades">
+            </div>
+    
+            <div>
+                <label for="extraccion">Extracción y conservación</label>
+                <input type="checkbox" name="asesoramiento" id="extraccion">
+            </div>
+    
+            <div>
+                <label for="trabajo">Vuelta al trabajo</label>
+                <input type="checkbox" name="asesoramiento" id="trabajo">
+            </div>
+    
+            <div>
+                <label for="destete_asesoramiento">Destete</label>
+                <input type="checkbox" name="asesoramiento" id="destete_asesoramiento">
+            </div>
+    
+            <div>
+                <label for="cuidados">Cuidados del bebé</label>
+                <input type="checkbox" name="asesoramiento" id="cuidados">
+            </div>
+        </div>
+    
+        <div>
+            <label for="modalidad">Modalidad de consulta:</label>
+    
+            <select id="modalidad" name="modalidad">
+                <option value="domicilio">A domicilio</option>
+                <option value="virtual">Virtual</option>
+                <option value="NO" selected disabled>Seleccionar modalidad</option>
+            </select>
+        </div>
+    
+        <div>
+            <label for="comentario">Contame brevemente el motivo de tu consulta:</label>
+    
+            <textarea
+                name="comentario"
+                id="comentario"
+                placeholder="Escribí tu consulta..."
+                rows="10"
+                cols="30"
+                maxlength="300"
+            ></textarea>
+        </div>
+    
+        <button type="submit">Enviar consulta</button>
+    
+    </form>
+</body>
+</html>

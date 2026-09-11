@@ -1,0 +1,78 @@
+/* 
+CSS funciona por medio de los selectores
+Los selectores nos permiten apuntar estilos a ciertos elementos de nuestra pagina
+*/
+
+/* 
+selector universal
+Da estilos a todos los elementos de la pagina
+*/
+*{
+    font-family: sans-serif;
+}
+
+
+
+
+.titulo-subrayado{
+    color: blue;
+    text-decoration: underline blue 1px;
+}
+
+/* Selector de clases */
+.titulo-principal{
+    color: blueviolet;
+}
+
+
+/* Selector de elementos */
+h1{
+    /* 
+    propiedades: Nos sirven para modificar aspectos/estilos de nuestro elemento
+        - color: color de texto
+        - background-color: color de fondo
+    */
+    color: red;
+}
+
+
+/* 
+Especificidad:
+    Mientras mas especifico es un selector/instruccion es el que terminara aplicando
+
+    + especifico 
+    ^
+    |
+    selector de id (no se usa)
+    selector de clases
+    selector de elementos
+    selector universal
+    |
+    v
+    - especifico
+*/
+
+
+/* 
+En este ejemplo btn es la clase principal que define como se ve un boton
+.btn-primary en cambio es la clase variante porque modifica al btn existente
+
+*/
+
+
+.btn{
+    background-color: white;
+    color: black;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.btn--primary{
+    background-color: blueviolet;
+    color: white;
+}
+
+/* selector de ids Mala practica 🤬*/
+/* #titulo{
+    color: yellow
+} */

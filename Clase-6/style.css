@@ -1,78 +1,39 @@
 /* 
-CSS funciona por medio de los selectores
-Los selectores nos permiten apuntar estilos a ciertos elementos de nuestra pagina
+@import ordena al nevegador descargar un recurso de css
 */
+@import url('https://fonts.googleapis.com/css2?family=Marvel:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-/* 
-selector universal
-Da estilos a todos los elementos de la pagina
-*/
+
 *{
-    font-family: sans-serif;
+    font-family: "Poppins", sans-serif;
 }
 
+/* 
+Propiedades de texto
+*/
 
-
-
-.titulo-subrayado{
-    color: blue;
-    text-decoration: underline blue 1px;
-}
-
-/* Selector de clases */
-.titulo-principal{
-    color: blueviolet;
-}
-
-
-/* Selector de elementos */
 h1{
-    /* 
-    propiedades: Nos sirven para modificar aspectos/estilos de nuestro elemento
-        - color: color de texto
-        - background-color: color de fondo
-    */
-    color: red;
+    
+    color: #bf5454; /* Color de la letra */
+    /* background-color: #adbf54; */ /* color del fondo */
+    font-size: 68px; /* tamaño de la letra */
+    font-family: "Marvel", sans-serif;
+    font-weight: 700; /* Modifica el peso de la fuente */
+    text-align: center; 
+    word-spacing: 40px; /* Espaciado entre palabras */
+    letter-spacing: 5px; /* Espaciado entre letras */
+    text-decoration:  underline rgb(110, 110, 110); /* Decoracion al texto (subrayado) */
+    text-shadow: 0px 0px 5px black;
+    font-style: italic;
 }
 
+p{
+    font-weight: 400;
+    text-align: justify;
+    font-size: 12px;
+    line-height: 20px; /* Interlineado */
+}
 
 /* 
-Especificidad:
-    Mientras mas especifico es un selector/instruccion es el que terminara aplicando
-
-    + especifico 
-    ^
-    |
-    selector de id (no se usa)
-    selector de clases
-    selector de elementos
-    selector universal
-    |
-    v
-    - especifico
+Propiedades de caja 
 */
-
-
-/* 
-En este ejemplo btn es la clase principal que define como se ve un boton
-.btn-primary en cambio es la clase variante porque modifica al btn existente
-
-*/
-
-
-.btn{
-    background-color: white;
-    color: black;
-    font-weight: bold;
-    border-radius: 5px;
-}
-
-.btn--primary{
-    background-color: blueviolet;
-    color: white;
-}
-
-/* selector de ids Mala practica 🤬*/
-/* #titulo{
-    color: yellow
-} */

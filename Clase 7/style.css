@@ -1,0 +1,53 @@
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* 
+toda propiedad tiene un valor por defecto
+*/
+
+.padre{
+    /* 1vw = 1% del ancho del viewport */
+    width: 100vw; /*100% del viewport width */
+    height: 100vh; /* 100% del viewport height */
+    background-color: green;
+
+    /* 
+    flexbox es una herramienta de css que nos permite acomodar a los hijos
+    flexbox se basa en un padre ordenando a sus hijos
+    */
+
+    /* habilita que este elemento sea flexible */
+    /* habilita las propiedades de flexbox */
+    display: flex;
+
+    /* 
+        flex-direction maneja la direccion de la flexbox, puede ser:
+            - row (uno aldado del otro)
+            - column (uno abajo del otro)
+    */
+    flex-direction: row;
+    /* justify-content: ;
+    align-items: ; */
+}
+
+.hijo{
+    width: 50px;
+    height: 70px;
+    background-color: black;
+}
+
+.hijo-1{
+    background-color: red;
+}
+
+.hijo-2{
+    background-color: blue;
+}
+
+.hijo-3{
+    background-color: blueviolet;
+}

@@ -1,53 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: "Inter", sans-serif;
 }
 
-/* 
-toda propiedad tiene un valor por defecto
-*/
-
-.padre{
-    /* 1vw = 1% del ancho del viewport */
-    width: 100vw; /*100% del viewport width */
-    height: 100vh; /* 100% del viewport height */
-    background-color: green;
-
-    /* 
-    flexbox es una herramienta de css que nos permite acomodar a los hijos
-    flexbox se basa en un padre ordenando a sus hijos
-    */
-
-    /* habilita que este elemento sea flexible */
-    /* habilita las propiedades de flexbox */
-    display: flex;
-
-    /* 
-        flex-direction maneja la direccion de la flexbox, puede ser:
-            - row (uno aldado del otro)
-            - column (uno abajo del otro)
-    */
-    flex-direction: row;
-    /* justify-content: ;
-    align-items: ; */
+body{
+    background-color: #1C1F25;
 }
 
-.hijo{
-    width: 50px;
+header{
     height: 70px;
-    background-color: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
-.hijo-1{
-    background-color: red;
+.logo-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
-.hijo-2{
-    background-color: blue;
+.logo path{
+    fill: white;
 }
 
-.hijo-3{
-    background-color: blueviolet;
+
+nav{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+nav a{
+    text-decoration: none;
+    color: white;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.login-btn{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    background-color: #272F43;
+    border: 1px solid rgba(255, 255, 255, 0.554);
+    color: white;
+    font-size: 13px;
+    height: 36px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 8px;
+    width: 90px;
 }

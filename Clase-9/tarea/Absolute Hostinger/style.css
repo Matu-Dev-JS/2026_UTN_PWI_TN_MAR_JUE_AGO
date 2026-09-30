@@ -1,0 +1,189 @@
+/* ---------------------------
+   ESTILOS GENERALES
+--------------------------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: white;
+    color: #111111;
+}
+
+
+/* ---------------------------
+   SECCIÓN PRINCIPAL
+--------------------------- */
+
+.idea {
+    padding: 100px 20px;
+    background-color: #ffffff;
+}
+
+.contenedor {
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
+}
+
+
+/* ---------------------------
+   TÍTULO
+--------------------------- */
+
+h2 {
+    font-size: 48px;
+    line-height: 1.2;
+    margin-bottom: 25px;
+}
+
+h2 span {
+    color: #673de6;
+}
+
+
+/* ---------------------------
+   DESCRIPCIÓN
+--------------------------- */
+
+.descripcion {
+    font-size: 18px;
+    color: #555555;
+    margin-bottom: 35px;
+}
+
+
+/* ---------------------------
+   FORMULARIO
+--------------------------- */
+
+.formulario {
+    position: relative;
+    max-width: 100%;
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+
+
+
+    
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+
+/* ---------------------------
+   INPUT
+--------------------------- */
+
+.formulario input {
+    flex: 1;
+
+    padding: 23px;
+    padding-right: 63px;
+
+    border: 1px solid #cccccc;
+    border-radius: 12px;
+
+    font-size: 16px;
+    width: 700px;
+}
+
+.formulario input::placeholder {
+    color: #777777;
+}
+
+
+/* ---------------------------
+   BOTÓN
+--------------------------- */
+
+.formulario button {
+    width: 50px;
+    height: 50px;
+
+    border: none;
+    border-radius: 10px;
+
+    background-color: #673de6;
+    color: white;
+
+    font-size: 24px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+    position: absolute;
+    right: 5px;
+}
+
+
+/* Efecto al pasar el mouse */
+
+.formulario button:hover {
+    background-color: #4f2bc2;
+    transform: translateX(3px);
+}
+
+
+/* ---------------------------
+   TEXTO INFERIOR
+--------------------------- */
+
+.aclaracion {
+    margin-top: 15px;
+
+    font-size: 14px;
+
+    color: #666666;
+}
+
+.oculto{
+    display: none;
+}
+
+
+/* ---------------------------
+   RESPONSIVE
+--------------------------- */
+
+@media (max-width: 768px) {
+
+    .idea {
+        padding: 70px 20px;
+    }
+
+    h2 {
+        font-size: 36px;
+    }
+
+    .descripcion {
+        font-size: 16px;
+    }
+
+    .formulario {
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    h2 {
+        font-size: 30px;
+    }
+
+    .formulario input {
+        font-size: 14px;
+    }
+
+    .formulario button {
+        width: 45px;
+        height: 45px;
+    }
+}

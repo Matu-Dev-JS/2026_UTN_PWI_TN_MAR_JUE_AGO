@@ -69,6 +69,33 @@ Bloque ofertas
     gap:20px;
 }
 
+@keyframes rotacion-infinita {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes izq-a-derecha{
+    0%{
+        transform: translateX(-200px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+h1{
+    animation-name: izq-a-derecha;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    animation-duration: 3000ms;
+}
+
 .oferta-dia{
     width: 338px;
     display: flex;
@@ -79,7 +106,11 @@ Bloque ofertas
     padding: 16px;
     border-radius: 6px;
     box-shadow: var(--box-shadow);
-
+    
+    animation-name: rotacion-infinita;
+    animation-duration: 2s;
+    animation-iteration-count: 2.3;
+    animation-timing-function: linear;
 }
 
 .tarjeta-producto-contenedor--principal{
@@ -95,8 +126,16 @@ Bloque ofertas
 .tarjeta-producto 
 .tarjeta-producto__imagen{
     width: 100%;
+    transition: 100ms ease-in;
+    filter: brightness(0.6);
 }
-
+.tarjeta-producto
+.tarjeta-producto__imagen:hover{
+    transform: scale(1.1);
+    transition: 300ms ease-in;
+    filter: brightness(1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.485);
+}
 
 
 
@@ -195,6 +234,18 @@ Bloque ofertas
     font-size: 24px;
     font-weight: 500;
     color: rgba(0, 0, 0, 0.91);
+    transition: 100ms ease-in-out;
+}
+
+/* 
+Hago referencia a los estilos sobre el elemento cuando el cursor del usuario este encima del elemento
+ */
+.tarjeta-producto__valor-precio:hover{
+   /*  transform: scale(1.1); */
+    /* transform: translate(10px, -20px); */
+    /* transform: rotate(-45deg); */
+    color: red;
+    transition: 300ms ease-in-out;
 }
 
 .tarjeta-producto__cantidad-vendida{

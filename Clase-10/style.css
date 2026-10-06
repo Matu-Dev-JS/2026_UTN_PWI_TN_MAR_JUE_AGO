@@ -90,10 +90,10 @@ Bloque ofertas
 }
 
 h1{
-    animation-name: izq-a-derecha;
+   /*  animation-name: izq-a-derecha;
     animation-timing-function: linear;
     animation-iteration-count: 1;
-    animation-duration: 3000ms;
+    animation-duration: 3000ms; */
 }
 
 .oferta-dia{
@@ -107,10 +107,10 @@ h1{
     border-radius: 6px;
     box-shadow: var(--box-shadow);
     
-    animation-name: rotacion-infinita;
+  /*   animation-name: rotacion-infinita;
     animation-duration: 2s;
     animation-iteration-count: 2.3;
-    animation-timing-function: linear;
+    animation-timing-function: linear; */
 }
 
 .tarjeta-producto-contenedor--principal{

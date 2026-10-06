@@ -35,15 +35,15 @@ Las {} (llaves) nos permiten hacer un bloque de codigo
 Un bloque de codigo es un bloque de acciones/codigo
 */
 
-//es de tipo string o null
+/* //es de tipo string o null
 var edad = prompt("ingresa una edad")
 
 //Es de tipo boolean
-var sosMayorEdad = Number(edad) >= 18
+var sosMayorEdad = Number(edad) >= 18 */
 
 
 //Si sosMayorEdad es verdadero ejecuta tal bloque de codigo
-if(sosMayorEdad){
+/* if(sosMayorEdad){
     alert('Bienvenido, sos mayor de edad!')
 }
 else if (edad >= 16){
@@ -58,7 +58,7 @@ else {
 
 
 console.log("Fin del programa")
-
+ */
 /* 
 (15 / 20 min)
 Pedirle al usuario un numero del 1 al 7, dependiendo del numero que nos de el usuario deberemos decir 
@@ -75,3 +75,33 @@ Aclaracion:
 - Cuando digo pedir al usuario hago referencia al prompt
 - Cuando digo decir al usuario hago referencia al alert
 */
+
+var dia = prompt("Elegi un número del 1 al 7");
+
+if (dia === "1") {
+    alert("Lunes");
+}
+else if (dia === "2") {
+    alert("Martes");
+}
+else if (dia === "3") {
+    alert("Miércoles");
+}
+else if (dia === "4") {
+    alert("Jueves");
+}
+else if (dia === "5") {
+    alert("Viernes");
+}
+else if (dia === "6") {
+    alert("Sábado");
+}
+else if (dia === "7") {
+    alert("Domingo");
+}
+else {
+    alert("número inválido");
+}
+
+
+console.log("El día seleccionado es: " + dia);

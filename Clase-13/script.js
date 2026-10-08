@@ -155,7 +155,7 @@ Si es correcto ejecutar el codigo anterior para determinar el dia de la semana
 
 //Promedio de 3 notas
 
-let sumatoria = 0
+/* let sumatoria = 0
 let cantidad_notas = 6
 
 for(
@@ -174,7 +174,7 @@ for(
 let promedio = sumatoria / cantidad_notas
 
 alert("El resultado del promedio anual es " + promedio)
-
+ */
 
 /* 
 Principios de programacion:
@@ -213,4 +213,59 @@ alert("La nota es " + nota_2 + ' y la sumatoria es ' + sumatoria)
 let nota_3 = prompt("Ingresa la nota 3")
 sumatoria = sumatoria + Number(nota_3)
 alert("La nota es " + nota_3 + ' y la sumatoria es ' + sumatoria)
+ */
+
+
+/* 
+
+let numeroDiaSemana = prompt("ingrese un numero del 1 al 7")
+while (Number(numeroDiaSemana) < 1 || Number(numeroDiaSemana) > 7){
+    alert("numero incorrecto")
+    numeroDiaSemana = prompt ("elija otro numero del 1 al 7")
+}
+
+if (numeroDiaSemana === "1"){
+    alert("lunes");
+}
+else if (numeroDiaSemana === "2"){
+    alert("martes");
+}
+else if (numeroDiaSemana === "3"){
+    alert("Miercoles");
+}
+else if (numeroDiaSemana === "4"){
+    alert("jueves");
+}
+else if (numeroDiaSemana === "5"){
+    alert("vienes");
+}
+else if (numeroDiaSemana === "6"){
+    alert("sabado");
+}
+else if (numeroDiaSemana === "7"){
+    alert("domingo");
+}
+ */
+
+
+/* let cantidadProductos = Number(
+    prompt("¿Cuántos productos querés ingresar?")
+);
+
+let productos = "";
+
+
+for (
+    let i = 1; 
+    i <= cantidadProductos; 
+    i++ //i = i + 1 (++ es la abreviacion de incrementar el valor de una variable en 1)
+) {
+    const nombre = prompt("Ingresá el nombre del producto " + i);
+    if (i === 1) {
+        productos = nombre;
+    } else {
+        productos = productos + ", " + nombre;
+    }
+}
+alert("Los productos que ingresaste son: " + productos);
  */

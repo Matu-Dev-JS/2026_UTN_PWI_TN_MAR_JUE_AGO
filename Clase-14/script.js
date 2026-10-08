@@ -40,3 +40,13 @@ mandarMailReporte('juan@gmail.com')
 Crear la funcion calcularIva(precio) nos muestre por consola "el iva del ${precio} es ${iva}"
 calcularIva(1000) "el iva del $1000 es $210"
 */
+
+function calcularIva(precio){
+    let iva = Number(precio) * (21 / 100)
+    console.log("el iva del $" + precio + " es $" + iva)
+}
+
+
+calcularIva(1000)
+calcularIva(100)
+calcularIva(200)

@@ -100,3 +100,4 @@ console.log('Personaje original', personaje)
 
 renombrarPersonaje('victor')
 console.log('Personaje modificado', personaje)
+

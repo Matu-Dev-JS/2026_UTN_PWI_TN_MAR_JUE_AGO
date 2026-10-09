@@ -169,4 +169,3 @@ mostrarHTML('<h1>El resultado de la suma es ' + resultado + ' </h1>')
 
 
 
-console.log(sumar(1, 1))

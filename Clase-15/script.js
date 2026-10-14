@@ -78,9 +78,9 @@ let usuarios = [
     }
 ]
 
-console.log(usuarios)
+/* console.log(usuarios)
 let maria = usuarios[1]
-console.log("Esta es maria", maria)
+console.log("Esta es maria", maria) */
 
 let palabras_prohebidas = [
     //0         1       2
@@ -92,3 +92,52 @@ let palabras_prohebidas = [
 Crear el array llamado carrito donde cada item sera un objeto con las propiedades, id_producto, cantidad, precio_unitario, nombre.
 Crear almenos 3 items dentro el array
 */
+
+let carrito = [
+    {//0
+        id_producto: 1,
+        cantidad: 2,
+        precio_unitario: 1500,
+        nombre:"televisor"
+    },
+    {//1
+        id_producto: 2,
+        cantidad: 1,
+        precio_unitario: 800,
+        nombre: "notebook"
+    },
+    {//2
+        id_producto: 3,
+        cantidad: 3,
+        precio_unitario: 500,
+        nombre:"parlante"
+    }
+]
+/* 
+console.log(carrito[0])
+
+console.log(carrito[1])
+
+console.log(carrito[2]) */
+/* 
+for(let indice = 0; indice < carrito.length; indice = indice + 1){
+    console.log("Indice: " + indice)
+    let item_carrito = carrito[indice]
+    console.log('Item:', item_carrito)
+}
+ */
+
+/* 
+Por cada item de mi array carrito voy a hacer x cosa
+*/
+let total = 0
+for (let item of carrito){
+    console.log("Item", item)
+    total = total + (item.precio_unitario * item.cantidad)
+}
+
+console.log("El total del carrito es: $" + total)
+
+
+let notas = [6, 8, 4]
+//Calcular el promedio de las notas (usando for / for of)

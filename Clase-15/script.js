@@ -7,7 +7,7 @@ let personaje = {
     salario: 5000
 }
 
-function renombrarPersonaje(nuevo_nombre){
+function renombrarPersonaje(nuevo_nombre) {
     personaje.nombre = nuevo_nombre
 }
 
@@ -61,7 +61,7 @@ Ejemplo:
     - Operaciones disponibles
 */
 //               0,  1,  2
-let trimestre = [70, 85, 60]
+/* let trimestre = [70, 85, 60]
 
 let usuarios = [
     { //0
@@ -76,16 +76,16 @@ let usuarios = [
         id: 3,
         name: 'juan'
     }
-]
+] */
 
 /* console.log(usuarios)
 let maria = usuarios[1]
 console.log("Esta es maria", maria) */
-
+/* 
 let palabras_prohebidas = [
     //0         1       2
     'toyota', 'audi', 'intel'
-]
+] */
 
 
 /* 
@@ -93,12 +93,12 @@ Crear el array llamado carrito donde cada item sera un objeto con las propiedade
 Crear almenos 3 items dentro el array
 */
 
-let carrito = [
+/* let carrito = [
     {//0
         id_producto: 1,
         cantidad: 2,
         precio_unitario: 1500,
-        nombre:"televisor"
+        nombre: "televisor"
     },
     {//1
         id_producto: 2,
@@ -110,9 +110,9 @@ let carrito = [
         id_producto: 3,
         cantidad: 3,
         precio_unitario: 500,
-        nombre:"parlante"
+        nombre: "parlante"
     }
-]
+] */
 /* 
 console.log(carrito[0])
 
@@ -130,14 +130,162 @@ for(let indice = 0; indice < carrito.length; indice = indice + 1){
 /* 
 Por cada item de mi array carrito voy a hacer x cosa
 */
-let total = 0
-for (let item of carrito){
+/* let total = 0
+for (let item of carrito) {
     console.log("Item", item)
     total = total + (item.precio_unitario * item.cantidad)
 }
 
-console.log("El total del carrito es: $" + total)
+console.log("El total del carrito es: $" + total) */
 
 
-let notas = [6, 8, 4]
+/* let notas = [6, 8, 4] */
 //Calcular el promedio de las notas (usando for / for of)
+
+/* let sumatoria_notas = 0
+for (let i = 0; i < notas.length; i = i + 1) {
+    sumatoria_notas = sumatoria_notas + notas[i]
+}
+
+let promedio = sumatoria_notas / notas.length
+
+console.log('El promedio es ' + promedio) */
+
+/* let notas = [6, 8, 4]
+let sumatoria_notas = 0
+for (let nota of notas) {
+    sumatoria_notas = sumatoria_notas + nota
+}
+let promedio = sumatoria_notas / notas.length
+console.log("El promedio es: " + promedio) */
+
+
+//Metodos de array
+//Nos permiten hacer acciones con los arrays
+
+/* let nombres = ['juan', 'jose'] */
+
+//push nos permite agregar al final de un array
+/* 
+nombres.push('pepe')
+nombres.push('maria') 
+*/
+
+//unshift nos permite agregar al principio de un array
+//nombres.unshift('pepe')
+
+//pop eliminar el ultimo elemento del array
+//nombres.pop()
+
+//shift eliminar el primer elemento del array
+//nombres.shift()
+
+//indexof nos permite saber cual es el indice de cierto elemento
+/* for(let nombre of nombres){
+    let indice_nombre = nombres.indexOf(nombre)
+    console.log('Indice ' + indice_nombre, nombre)
+} */
+
+
+//let nombres = ['juan', 'juana', 'jose', 'maria'] 
+//splice nos permite eliminar/agregar un cierto elemento del array por su indice
+//Quiero eliminar a jose:
+/* 
+let indice_jose = nombres.indexOf('jose')
+nombres.splice(indice_jose, 1) 
+*/
+
+//Quiero agregar en la posicion de jose a 'pepe'
+/* 
+let indice_jose = nombres.indexOf('jose')
+nombres.splice(indice_jose, 0, 'pepe') 
+ */
+
+//Quiero remplazar en la posicion de jose a 'pepe'
+/* 
+let indice_jose = nombres.indexOf('jose')
+nombres.splice(indice_jose, 1, 'pepe')  
+*/
+
+
+//console.log(nombres)
+
+
+let productos = [
+    {
+        id: 10,
+        nombre: 'Tv Samsung',
+        stock: 30,
+        precio: 4000
+    }
+]
+
+//Crear la funcion llamada agregarProducto que sume un producto a la lista de productos
+
+//Crear una funcion llamada obtenerProductoPorId(id_producto) que devuelva el producto con el id buscado, si no lo encuentra que devuelva null
+
+function agregarProducto(id, nombre, stock, precio){
+    let nuevo_producto = {
+        id: id,
+        nombre: nombre,
+        stock: stock,
+        precio: precio
+    }
+    productos.push(nuevo_producto)
+}
+
+//Buscar algo en una lista
+//Recorrer la lista y por cada elemento ejecutar una condicion -
+//- (En este caso el producto.id === id_producto)
+
+
+function buscarProductoPorId(id_producto){
+    for(let producto of productos){
+        if(producto.id === id_producto){
+            return producto
+        }
+    }
+    return null
+}
+
+
+
+agregarProducto(2, 'mesa de madera', 2, 120)
+
+console.log(productos)
+
+
+let producto_con_id_2 = buscarProductoPorId(10)
+console.log('El producto con id 10 es ', producto_con_id_2)
+
+
+let usuarios = [
+    {
+        id: 1,
+        email: "pepe@gmail.com",
+        nombre: 'pepe'
+    },
+    {
+        id: 2,
+        email: "jose@gmail.com",
+        nombre: 'jose'
+    },
+    {
+        id: 3,
+        email: "adrian@gmail.com",
+        nombre: 'adrian'
+    },
+    {
+        id: 4,
+        email: "julieta@gmail.com",
+        nombre: 'julieta'
+    }
+]
+
+/* 
+Crear las funciones:
+- buscarUsuarioPorId(id_usuario)
+- buscarUsuarioPorEmail(email)
+- buscarUsuarioPorNombre(nombre)
+- eliminarUsuarioPorId(id_usuario) (Dificil)
+*/

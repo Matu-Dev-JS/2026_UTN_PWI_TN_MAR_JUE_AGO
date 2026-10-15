@@ -224,7 +224,7 @@ let productos = [
 
 //Crear una funcion llamada obtenerProductoPorId(id_producto) que devuelva el producto con el id buscado, si no lo encuentra que devuelva null
 
-function agregarProducto(id, nombre, stock, precio){
+function agregarProducto(id, nombre, stock, precio) {
     let nuevo_producto = {
         id: id,
         nombre: nombre,
@@ -239,9 +239,9 @@ function agregarProducto(id, nombre, stock, precio){
 //- (En este caso el producto.id === id_producto)
 
 
-function buscarProductoPorId(id_producto){
-    for(let producto of productos){
-        if(producto.id === id_producto){
+function buscarProductoPorId(id_producto) {
+    for (let producto of productos) {
+        if (producto.id === id_producto) {
             return producto
         }
     }
@@ -249,17 +249,22 @@ function buscarProductoPorId(id_producto){
 }
 
 
-
+/* 
 agregarProducto(2, 'mesa de madera', 2, 120)
 
 console.log(productos)
-
+ */
 
 let producto_con_id_2 = buscarProductoPorId(10)
-console.log('El producto con id 10 es ', producto_con_id_2)
+/* console.log('El producto con id 10 es ', producto_con_id_2) */
 
 
 let usuarios = [
+    {
+        id: 4,
+        email: "julieta@gmail.com",
+        nombre: 'julieta'
+    },
     {
         id: 1,
         email: "pepe@gmail.com",
@@ -275,17 +280,125 @@ let usuarios = [
         email: "adrian@gmail.com",
         nombre: 'adrian'
     },
-    {
-        id: 4,
-        email: "julieta@gmail.com",
-        nombre: 'julieta'
-    }
+   
 ]
 
 /* 
 Crear las funciones:
-- buscarUsuarioPorId(id_usuario)
-- buscarUsuarioPorEmail(email)
-- buscarUsuarioPorNombre(nombre)
-- eliminarUsuarioPorId(id_usuario) (Dificil)
+- buscarUsuarioPorId(id_usuario) Cintia
+    function buscarUsuarioPorId(id_usuario) {
+        for (let usuario of usuarios) {
+            if (usuario.id === id_usuario) {
+                return usuario
+            }
+        }
+        return null
+    }
+
+
+- buscarUsuarioPorEmail(email) FLavia
+    function buscarUsuarioPorEmail(email) {
+    for (let usuario of usuarios) {
+        if (usuario.email === email) {
+            return usuario
+        }
+    }
+    return null
+}
+
+
+- buscarUsuarioPorNombre(nombre) Veronica
+    
+    function buscarUsuarioPorNombre(nombre) {
+        for (const usuario of usuarios) {
+            if (usuario.nombre === nombre) {
+                return usuario;
+            }
+        }
+        return null 
+    }
+
+
+- eliminarUsuarioPorId(id_usuario) (Dificil) Ramiro
 */
+function buscarUsuarioPorId(id_usuario) {
+    for (let usuario of usuarios) {
+        if (usuario.id === id_usuario) {
+            return usuario
+        }
+    }
+    return null
+}
+
+function eliminarUsuarioPorId(id_usuario) {
+
+    /* Que necesitamos del usuario para eliminarlo? el indice */
+
+    /* usuario es de tipo de dato: object | null */
+    let usuario = buscarUsuarioPorId(id_usuario)
+
+    /* Si no lo encuentra cortar funcion */
+    if(usuario === null){
+        return null
+    }
+
+    let indice_usuario = usuarios.indexOf(usuario)
+    usuarios.splice(indice_usuario, 1);
+    return true
+}
+
+
+/* 
+splice sirve para elminar, agregar o remplazar un cierto elemento del array por su indice
+    0       1       2
+['pepe', 'juan', 'maria']
+splice(indice_desde_donde_operar, cantidad_de_elementos_a_eliminar)
+*/
+
+
+
+
+
+/* Los IF NO EVALUAN QUE LA CONDICION SEA VERDADERA (true), sino en cambio evaluan que LA CONDICION SEA truthy */
+/* 
+Un valor truthy es cuando al transformar ese valor a boolean nos da un true
+    !falsy = truthy
+
+Un valor falsy es cuando al transformar ese valor a boolean nos da false
+    - 0
+    - null
+    - undefined
+    - NaN 
+    - ''
+    - false
+
+
+! NOT devuelve el opuesto booleano de el valor negado
+*/
+
+
+/* -2, -1, 0, 1, 2, 3  | null*/
+/* let piso_seleccionado = 0
+const pisos_validos = [-2, -1, 0, 1, 2, 3]
+
+if( piso_seleccionado === null ){
+    console.log("No seleccionaste piso")
+}
+
+
+function validarPiso (piso_seleccionado){
+    for(let piso_valido of pisos_validos){
+        if(piso_seleccionado === piso_valido){
+            return true
+        }
+    }
+    return false
+}
+
+
+if(validarPiso(piso_seleccionado)){
+    console.log('Seleccionaste piso ' + piso_seleccionado)
+} */
+
+eliminarUsuarioPorId(4)
+console.log(usuarios)

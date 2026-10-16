@@ -400,5 +400,8 @@ if(validarPiso(piso_seleccionado)){
     console.log('Seleccionaste piso ' + piso_seleccionado)
 } */
 
-eliminarUsuarioPorId(4)
-console.log(usuarios)
+/* eliminarUsuarioPorId(4)
+console.log(usuarios) */
+
+
+

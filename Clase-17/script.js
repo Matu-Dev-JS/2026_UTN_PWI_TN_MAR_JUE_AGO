@@ -85,3 +85,45 @@ cuando modifican el innerHTML a nivel de recursos es una operacion costosa
 Esto no quiere decir que NUNCA deben usar innerHTML, quiere decir que debemos hacer un uso moderado y responsable. Usarlo la minima cantidad de veces y solo cuando es necesario
 */
 users_list.innerHTML = html
+
+
+/* 
+Renderizar es mostrar algo
+En una calculadora lo que vemos en pantalla es el render de la operacion del usuario "1 + 1 = 2"
+En un juego, la pantalla es el render del juego
+En una pagina, la pagina en si que vemos en el navegador es el renderizado de la pagina
+*/
+
+
+/* 
+Renderizar un carrito de compras
+*/
+const carrito = [
+    {
+        id: 1,
+        title: 'mesa ratona de madera',
+        cantidad: 2,
+        precio_unitario: 200
+    },
+    {
+        id: 2,
+        title: 'Teclado philips redondeado',
+        cantidad: 5,
+        precio_unitario: 450
+    },
+    {
+        id: 3,
+        title: 'TV Samsung',
+        cantidad: 1,
+        precio_unitario: 1450
+    }
+]
+
+/* 
+Por cada item en carrito de compras deberan imprimir
+
+h3 > {titulo_producto} x {cantidad} unidad/es
+span> Precio unitario ${precio_unitario} ARS
+div > Subtotal: ${precio_unitario * cantidad} ARS
+hr
+*/

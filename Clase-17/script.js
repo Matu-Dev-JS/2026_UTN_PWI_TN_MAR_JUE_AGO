@@ -68,7 +68,7 @@ let usuarios = [
     }
 ]
 
-let users_list = document.getElementById('users-list')
+/* let users_list = document.getElementById('users-list')
 
 let html = ''
 
@@ -79,12 +79,12 @@ for(let usuario of usuarios){
         <span>Email: ${usuario.email}</span>
         <hr>
     `
-}
+} */
 /* 
 cuando modifican el innerHTML a nivel de recursos es una operacion costosa
 Esto no quiere decir que NUNCA deben usar innerHTML, quiere decir que debemos hacer un uso moderado y responsable. Usarlo la minima cantidad de veces y solo cuando es necesario
 */
-users_list.innerHTML = html
+//users_list.innerHTML = html
 
 
 /* 
@@ -127,3 +127,15 @@ span> Precio unitario ${precio_unitario} ARS
 div > Subtotal: ${precio_unitario * cantidad} ARS
 hr
 */
+
+let lista_del_carrito = document.getElementById ('lista_del_carrito')
+let html =''
+for(let item of carrito){
+    html = html + `
+    <h3> ${item.title} x ${item.cantidad} unidad/es</h3>
+    <span> Precio Unitario: $${item.precio_unitario}ARS</span>
+    <div>Subtotal: $${item.precio_unitario * item.cantidad} ARS</div>
+    <hr>
+    `
+}
+lista_del_carrito.innerHTML = html

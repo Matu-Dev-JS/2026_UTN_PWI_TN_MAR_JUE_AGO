@@ -55,6 +55,11 @@ function agregarAlCarrito(titulo, precio, cantidad){
     setCarritoState( clonedCarritoState )
 }
 
+/* 
+Crear la funcion eliminarPorId(item_id) busque el item por su id y lo elimine (obviamente NO MODIFIQUEN EL ESTADO, usen el setter)
+*/
+
+
 renderCarrito()
 
 

@@ -49,26 +49,37 @@ Llamar a boton de sumar y asignarle que para el evento click se active la funcio
 Llamar a boton de resta y asignarle que para el evento click se active la funcion de decremento
 */
 
+
 const contador_HTML = document.getElementById("contador");
 const btnMenos = document.getElementById("btn-menos");
 const btnMas = document.getElementById("btn-mas");
 
-let numeroContador = 0;
-contador_HTML.innerText = numeroContador
+let contadorEstado = 0;
+
+function renderContador (){
+    contador_HTML.innerText = contadorEstado;
+}
+
+function setContadorEstado (nuevoValor){
+    contadorEstado = nuevoValor
+    renderContador()
+}
+
+renderContador()
+
 
 function restar() {
-    numeroContador = numeroContador - 1;
-    contador_HTML.innerText = numeroContador;
+    setContadorEstado(contadorEstado - 1)
 }
 
 function sumar() {
-    numeroContador = numeroContador + 1;
-    contador_HTML.innerText = numeroContador;
+    let contadorClonado = contadorEstado
+    contadorClonado = contadorClonado + 3
+    setContadorEstado(contadorClonado)
 }
 
 function restablecer (){
-    numeroContador = 0
-    contador_HTML.innerText = numeroContador
+    setContadorEstado(0)
 }
 
 btnMenos.addEventListener("click", restar);
@@ -81,4 +92,8 @@ Supongamos que estamos en juego, la vida, experiencia, dinero, coordenadas etc s
 
 El estado NO es un tipo de dato, es un concepto, ejemplo el dinero de tu billetera virtual
 Normalmente estos estados se van a modificar y al modificarse van a actualizar el renderizado de la aplicacion.
+
+LOS ESTADOS SON INMUTABLES, esto quiere decir que un estado no podemos reasignarle otro valor. Para poder cambiar de valor el estado podemos crearnos una funcion de seteo
+
+Cada estado tendra que tener su propia funcion de seteo, la funcion de seteo se usara para actualizar el valor del estado de forma segura. Esa funcion de seteo se encargara que cada vez que se actualice el estado se renderize nuevamente.
 */

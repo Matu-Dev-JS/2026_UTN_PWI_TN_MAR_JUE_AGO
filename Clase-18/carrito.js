@@ -15,10 +15,10 @@ let carritoState = [
 
 const carrito_HTML = document.getElementById('carrito')
 
-function renderCarrito(){
+function renderCarrito() {
     let html = ''
 
-    for(let item of carritoState){
+    for (let item of carritoState) {
         html = html + `
             <div>
                 <h3>${item.titulo} x ${item.cantidad} unidad/es</h3>
@@ -32,17 +32,17 @@ function renderCarrito(){
     carrito_HTML.innerHTML = html
 }
 
-function setCarritoState (nuevoValor){
+function setCarritoState(nuevoValor) {
     carritoState = nuevoValor
     renderCarrito()
 }
 
-function vaciarCarrito (){
+function vaciarCarrito() {
     setCarritoState([])
 }
 
 
-function agregarAlCarrito(titulo, precio, cantidad){
+function agregarAlCarrito(titulo, precio, cantidad) {
     //Clonamos el estado de carrito para poder modificarlo sin modificar el ORIGINAL
     let clonedCarritoState = [...carritoState]
 
@@ -52,7 +52,7 @@ function agregarAlCarrito(titulo, precio, cantidad){
         cantidad: cantidad,
         id: 1
     })
-    setCarritoState( clonedCarritoState )
+    setCarritoState(clonedCarritoState)
 }
 
 /* 
@@ -92,3 +92,22 @@ nombres_2.push("julieta")
 
 console.log(nombres_1)
 console.log(nombres_2) */
+
+function eliminarPorId(item_id) {
+    //Clonamos el estado de carrito para poder modificarlo sin modificar el ORIGINAL
+    let clonedCarritoState = [...carritoState]
+    for (let item of clonedCarritoState) {
+        if (item.id === item_id) {
+            let indice_item = clonedCarritoState.indexOf(item.id)
+            clonedCarritoState.splice(indice_item, 1);
+            setCarritoState(clonedCarritoState)
+            return true
+        }
+    }
+    return false
+}
+
+/* 
+incrementarCantidadItem(item_id) si lo encuentra incrementa en 1 la cantidad
+decrementarCantidadItem(item_id) si lo encuentra decrementa en 1 la cantidad
+*/

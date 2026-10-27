@@ -55,43 +55,6 @@ function agregarAlCarrito(titulo, precio, cantidad) {
     setCarritoState(clonedCarritoState)
 }
 
-/* 
-Crear la funcion eliminarPorId(item_id) busque el item por su id y lo elimine (obviamente NO MODIFIQUEN EL ESTADO, usen el setter)
-*/
-
-
-renderCarrito()
-
-
-/* let nombre_1 = 'pepe'
-let nombre_2 = nombre_1
-
-nombre_2 = 'jose'
-
-console.log(nombre_1) */
-
-/* let nombres_1 = ['pepe', 'maria', 'jose']
-let nombres_2 = nombres_1
-
-nombres_2.push("julieta")
-
-console.log(nombres_1 === nombres_2) */
-
-/* 
-Spread operator (...) operador de propagacion
-Nos permite propagar los valores de un objeto o array sobre otro
-
-*/
-
-/* let nombres_1 = ['pepe', 'maria', 'jose']
-
-//Asi se clona un array
-let nombres_2 = [...nombres_1]
-
-nombres_2.push("julieta")
-
-console.log(nombres_1)
-console.log(nombres_2) */
 
 function eliminarPorId(item_id) {
     //Clonamos el estado de carrito para poder modificarlo sin modificar el ORIGINAL
@@ -109,5 +72,51 @@ function eliminarPorId(item_id) {
 
 /* 
 incrementarCantidadItem(item_id) si lo encuentra incrementa en 1 la cantidad
-decrementarCantidadItem(item_id) si lo encuentra decrementa en 1 la cantidad
+decrementarCantidadItem(item_id) 
+    si lo encuentra 
+        Verificar si la cantidad es 1, si lo es, debe eliminar el item del carrito
+        Sino decrementa en 1 la cantidad
 */
+
+function incrementarCantidadItem(item_id) { 
+    let clonedCarritoState = [...carritoState];
+    for (let item of clonedCarritoState) {
+        if (item.id === item_id) {
+            item.cantidad = item.cantidad + 1;
+            break; 
+        }
+    }
+    setCarritoState(clonedCarritoState);
+}
+
+
+function decrementarCantidadItem(item_id) {
+    let clonedCarritoState = [...carritoState]
+    for (let item of clonedCarritoState) {
+        if (item.id === item_id) {
+            if(item.cantidad === 1){
+                eliminarPorId(item_id)
+            }
+            else{
+                item.cantidad = item.cantidad - 1
+                setCarritoState(clonedCarritoState)
+            }
+            
+            return true
+        }
+    }
+    return false
+}
+
+
+
+/* 
+Definicion: Explicar que va a hacer la funcion
+Invocacion o llamada de la funcion
+*/
+
+//primera impresion en pantalla
+renderCarrito()
+
+
+

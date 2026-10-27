@@ -24,12 +24,44 @@ function renderCarrito() {
                 <h3>${item.titulo} x ${item.cantidad} unidad/es</h3>
                 <div>Precio unitario: $${item.precio} ARS</div>
                 <div>Subtotal: $${item.cantidad * item.precio} ARS</div>
+                <div>
+                    <button 
+                        class='increment-cart-btn'
+                        data-item-id='${item.id}'
+                    >+</button>
+                    <span>${item.cantidad}</span>
+                    <button 
+                        class='decrement-cart-btn'
+                        data-item-id='${item.id}'
+                    >-</button>
+                    <button 
+                        class='delete-cart-btn'
+                        data-item-id='${item.id}'
+                    >Eliminar</button>
+                </div>
                 <hr/>
             </div>
         `
     }
-
+    
+    //A partir de aca se modifico el DOM
+    //a partir de aca existen mis elementos
     carrito_HTML.innerHTML = html
+
+
+    //llamamos a todos los botones por clase "increment-cart-btn"
+    //.getElementsByClassName, nos permite obtener una lista de todos los elementos que tengan cierta clase
+    
+    const btnIncrementList = document.getElementsByClassName('increment-cart-btn')
+    function handleIncrementarItem(){
+        console.log("Se intento incrementar el item")
+    }
+    /* Por cada boton de incremento le asocio la funcionalidad "saludar" al evento click */
+    for(const btnIncrement of btnIncrementList){
+        btnIncrement.addEventListener(
+            'click', handleIncrementarItem
+        )
+    }
 }
 
 function setCarritoState(nuevoValor) {
@@ -100,3 +132,11 @@ renderCarrito()
 
 
 
+const tituloHTML = document.getElementById('titulo')
+
+//Accediendo desde JS al atributo del elemento 'data-valor-oculto'
+console.log(tituloHTML.getAttribute('data-valor-oculto'))
+
+/* 
+Los data attributes nos permiten guardar datos en los elementos HTML
+*/

@@ -28,11 +28,13 @@ function renderCarrito() {
                     <button 
                         class='increment-cart-btn'
                         data-item-id='${item.id}'
+                        data-action-key='INCREMENTAR_ITEM'
                     >+</button>
                     <span>${item.cantidad}</span>
                     <button 
                         class='decrement-cart-btn'
                         data-item-id='${item.id}'
+                        data-action-key='DECREMENTAR_ITEM'
                     >-</button>
                     <button 
                         class='delete-cart-btn'
@@ -43,7 +45,7 @@ function renderCarrito() {
             </div>
         `
     }
-    
+
     //A partir de aca se modifico el DOM
     //a partir de aca existen mis elementos
     carrito_HTML.innerHTML = html
@@ -55,29 +57,65 @@ function renderCarrito() {
 
     //llamamos a todos los botones por clase "increment-cart-btn"
     //.getElementsByClassName, nos permite obtener una lista de todos los elementos que tengan cierta clase
-    
-    const btnIncrementList = document.getElementsByClassName('increment-cart-btn')
 
+
+    
+    const btnDeleteList = document.getElementsByClassName('delete-cart-btn')
+
+    //asociarBotonesIncremento()
+    asociarAccionesItem()
+
+}
+
+function asociarBotonesIncremento() {
+    const btnIncrementList = document.getElementsByClassName('increment-cart-btn')
     /* 
     Si una funcion es llamada desde un evento, esa funcion recibe el objeto event
     ese objeto event tiene informacion del evento en si, por ejemplo que tipo de evento, desde que elemento se disparo
-    */
-    function handleIncrementarItem( evento ){
+   */
+    function handleIncrementarItem(evento) {
         /* evento.target es el elemento del que se disparo el evento */
-        
+
         const btnClickeado = evento.target
         const item_id = btnClickeado.getAttribute('data-item-id')
         incrementarCantidadItem(Number(item_id))
-        
+
     }
 
     /* Por cada boton de incremento le asocio la funcionalidad "saludar" al evento click */
-    for(const btnIncrement of btnIncrementList){
+    for (const btnIncrement of btnIncrementList) {
         btnIncrement.addEventListener(
             'click', handleIncrementarItem
         )
     }
 }
+
+function asociarAccionesItem(){
+    const btnDecrementList = document.getElementsByClassName('decrement-cart-btn')
+    const btnIncrementList = document.getElementsByClassName('increment-cart-btn')
+    function handleInteractuarItem(evento) {
+
+        const btnClickeado = evento.target
+        const item_id = btnClickeado.getAttribute('data-item-id')
+        const action_key = btnClickeado.getAttribute('data-action-key')
+
+
+        ACCIONES_CARRITO[action_key](Number(item_id))
+    }
+
+    for (const btnIncrement of btnIncrementList) {
+        btnIncrement.addEventListener(
+            'click', handleInteractuarItem
+        )
+    }
+
+    for(const btnDecrement of btnDecrementList){
+        btnDecrement.addEventListener(
+            'click', handleInteractuarItem
+        )
+    }
+}
+
 
 function setCarritoState(nuevoValor) {
     carritoState = nuevoValor
@@ -114,12 +152,12 @@ function eliminarPorId(item_id) {
     return false
 }
 
-function incrementarCantidadItem(item_id) { 
+function incrementarCantidadItem(item_id) {
     let clonedCarritoState = [...carritoState];
     for (let item of clonedCarritoState) {
         if (item.id === item_id) {
             item.cantidad = item.cantidad + 1;
-            break; 
+            break;
         }
     }
     setCarritoState(clonedCarritoState);
@@ -129,18 +167,25 @@ function decrementarCantidadItem(item_id) {
     let clonedCarritoState = [...carritoState]
     for (let item of clonedCarritoState) {
         if (item.id === item_id) {
-            if(item.cantidad === 1){
+            if (item.cantidad === 1) {
                 eliminarPorId(item_id)
             }
-            else{
+            else {
                 item.cantidad = item.cantidad - 1
                 setCarritoState(clonedCarritoState)
             }
-            
+
             return true
         }
     }
     return false
+}
+
+const ACCIONES_CARRITO = {
+    "VACIAR": vaciarCarrito,
+    "ELIMINAR_ITEM": eliminarPorId,
+    "DECREMENTAR_ITEM": decrementarCantidadItem,
+    "INCREMENTAR_ITEM": incrementarCantidadItem,
 }
 
 renderCarrito()

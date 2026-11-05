@@ -20,20 +20,22 @@ function ProductCard (props){
     return (
         <div>
             <h2>{props.titulo}</h2>
-            <p>{props.descripcion}</p>
-          
+            {
+                props.descripcion
+                ? <p>{props.descripcion}</p>
+                : <p>Sin descripcion</p>
+            }
+
             <span>Precio: ${props.precio} ARS</span>
             {descuento_badge}
 
 
 
-            {/* {
-            props.descuento 
-            && 
+            {
             props.descuento > 0 
             && 
             <span>%{props.descuento} OFF</span>
-            } */}
+            }
             <button>Comprar</button>
         </div>
     )

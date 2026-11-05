@@ -2,6 +2,21 @@ import React from 'react'
 import ProductCard from './Components/ProductCard/ProductCard'
 
 
+/* 
+Crear el componente WspContactOption 
+Recibira:
+  nombre: string
+  ultimo_mensaje: string
+  fecha: string
+  cantidad_mensajes_no_leidos: number
+
+E instanciarlo 3 veces en el App component
+<WspContactOption nombre='joe doe' ultimo_mensaje='Que tal?' fecha='17:40' cantidad_mensajes_no_leidos={3}
+
+Solo mostrar la cantidad de mensajes no leidos si hay mensajes no leidos (> 1)
+
+*/
+
 
 export default function App() {
   return (

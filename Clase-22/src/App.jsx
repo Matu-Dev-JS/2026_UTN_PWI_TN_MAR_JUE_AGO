@@ -2,6 +2,7 @@ import React from 'react'
 import ProductCard from './Components/ProductCard/ProductCard'
 import WspContactOption from './Components/WspContactOption/WspContactOption'
 import Counter from './Components/Counter/Counter'
+import LuzPrendida from './Components/LuzPrendida/LuzPrendida'
 
 
 /* 
@@ -58,6 +59,8 @@ export default function App() {
 
 
       <Counter/>
+    
+      <LuzPrendida/>
     </div>
   )
 }

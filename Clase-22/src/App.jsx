@@ -1,6 +1,7 @@
 import React from 'react'
 import ProductCard from './Components/ProductCard/ProductCard'
 import WspContactOption from './Components/WspContactOption/WspContactOption'
+import Counter from './Components/Counter/Counter'
 
 
 /* 
@@ -54,6 +55,9 @@ export default function App() {
         fecha="19:30"
         cantidad_mensajes_no_leidos={1}
       />
+
+
+      <Counter/>
     </div>
   )
 }

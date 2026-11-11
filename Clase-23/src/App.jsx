@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 
 /* 
@@ -46,14 +46,27 @@ export default function App() {
     
     //Leemos el contenido de la respuesta como json
     let response_body = await result.json()
-    console.log(response_body)
-   
+
+    setIsPending(false)
+    setResponse(response_body)   
   }
 
-  obtenerUsuarios()
 
+  /* 
+  Permite controlar la recarga de una funcion 
+  Recibe 2 parametros:
+    1. Efecto, la funcionalidad a ejecutar
+    2. array de dependencias, si alguno de los valores del array cambia vuelve a ejecutar la funcionalidad, si el array esta vacio solo ejecuta la funcionalidad 1 vez
+  */
+  useEffect(
+    function (){
+      obtenerUsuarios()
+    },
+    []//Vacio para que solo se ejecute la funcion 1 vez
+  )
   
-
+  
+  console.log(isPendingValue, responseValue)
   
   return (
     <div>

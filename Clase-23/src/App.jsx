@@ -67,10 +67,30 @@ export default function App() {
   
   
   console.log(isPendingValue, responseValue)
-  
+
+  let usuarios_jsx = []  
+  if( responseValue ){
+    for(let usuario of responseValue){
+      usuarios_jsx.push(
+        <div>
+          <span>ID: #{usuario.id}</span>
+          <h2>{usuario.name}</h2>
+          <div>Email: {usuario.email}</div>
+          <hr/>
+        </div>
+      )
+    }
+  }
   return (
     <div>
-      
+      {
+        !isPendingValue 
+        ? <div>
+          <h1>Usuarios:</h1>
+          {usuarios_jsx}
+        </div>
+        : <span>Cargando...</span>
+      }
     </div>
   )
 }

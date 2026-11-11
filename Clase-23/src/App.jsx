@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 
 /* 
@@ -7,6 +7,27 @@ Seguir viendo estados
 */
 
 export default function App() {
+
+  /* 
+  Deberiamos tener 2 estados para manejar la consulta HTTP
+    isPending: Boolean
+    response
+  */
+  const isPendingState = useState(true)
+  const isPendingValue = isPendingState[0]
+  const setIsPending = isPendingState[1]
+
+  const responseState = useState(null)
+  const responseValue = responseState[0]
+  const setResponse = responseState[1]
+
+  /* 
+  JS maneja la asincronia mediante las promesas
+  Una promesa es un objeto de JS con 3 estados posibles:
+    Pending (pendiente): Aun resolviendose
+    Resolved (resuelto): La consulta ya esta resuelta
+    Reject (rechazado): La consulta se rechazo (error)
+  */
   /* 
   Sirve para emitir consultas HTTP desde el navegador
   Recibe:
@@ -14,12 +35,26 @@ export default function App() {
     2. Un objeto de configuracion de la consulta
         method: "GET" | "POST" | "PUT" | "DELETE"
   */
-  fetch(
-    'https://jsonplaceholder.typicode.com/users',
-    {
-      method: "GET"
-    }
-  )
+
+  async function obtenerUsuarios (){
+    let result = await fetch(
+      'https://jsonplaceholder.typicode.com/users',
+      {
+        method: "GET"
+      }
+    )
+    
+    //Leemos el contenido de la respuesta como json
+    let response_body = await result.json()
+    console.log(response_body)
+   
+  }
+
+  obtenerUsuarios()
+
+  
+
+  
   return (
     <div>
       

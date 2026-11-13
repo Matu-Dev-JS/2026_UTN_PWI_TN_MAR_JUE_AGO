@@ -12,6 +12,7 @@ Debe renderizarse debajo o encima del form la lista de mensajes
 
 
 Revisar el archivo FormAltaProducto como ejemplo de formulario controlado
+Recomiendo usar la misma logica de ids implementada en el FormAltaProducto o directamente que los mensajes NO tengan ID
 */
 
 import { useState } from "react"

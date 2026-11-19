@@ -4,7 +4,7 @@ import { ContactContext } from '../Context/ContactContext'
 
 export function LoginScreen() {
 
-    //Usar el contexto
+    //Usar/Consumiendo el contexto
     const result = useContext(ContactContext)
 
     console.log(result.contacts)

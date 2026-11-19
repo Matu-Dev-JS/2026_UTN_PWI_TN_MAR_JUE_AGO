@@ -38,6 +38,9 @@ export function ContactContextProvider(props) {
 
 
     const [contacts, setContacts] = useState(initialContactState)
+
+
+    //Este providerValues es el objeto que retorna mi contexto cuando se lo quiera consumir
     const providerValues = {
         contacts: contacts
     }

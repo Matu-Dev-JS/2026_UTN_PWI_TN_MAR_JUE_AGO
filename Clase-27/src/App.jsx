@@ -4,6 +4,7 @@ import HomeScreen from './Screens/HomeScreen'
 import {LoginScreen} from './Screens/LoginScreen'
 import RegisterScreen from './Screens/RegisterScreen'
 import NotFoundScreen from './Screens/NotFoundScreen'
+import ContactDetailScreen from './Screens/ContactDetailScreen'
 
 export default function App() {
   return (
@@ -23,6 +24,11 @@ export default function App() {
       <Route 
         path='/register'
         element={<RegisterScreen/>}
+      />
+
+      <Route 
+        path='/contact/:contact_id'
+        element={<ContactDetailScreen/>}
       />
       <Route 
         path='/*'

@@ -1,0 +1,7 @@
+- Git 
+- Visual studio code 
+- Node.js (React y NPM)
+- Extensiones: 
+    - ES7+ React/Redux/React-Native snippet
+    - Auto Close Tag
+    - Auto rename tag

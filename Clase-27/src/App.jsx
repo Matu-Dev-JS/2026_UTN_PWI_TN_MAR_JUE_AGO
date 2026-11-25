@@ -5,10 +5,12 @@ import {LoginScreen} from './Screens/LoginScreen'
 import RegisterScreen from './Screens/RegisterScreen'
 import NotFoundScreen from './Screens/NotFoundScreen'
 import ContactDetailScreen from './Screens/ContactDetailScreen'
+import { ContactDetailContextProvider } from './Context/ContactDetailContext'
 
 export default function App() {
   return (
     <Routes>
+      
       <Route 
         path='/' 
         element={<HomeScreen/>}
@@ -26,10 +28,20 @@ export default function App() {
         element={<RegisterScreen/>}
       />
 
-      <Route 
-        path='/contact/:contact_id'
-        element={<ContactDetailScreen/>}
-      />
+      <Route element={<ContactDetailContextProvider/>}>
+
+        <Route 
+          path='/contact/:contact_id'
+          element={<ContactDetailScreen/>}
+        />
+        <Route 
+          path='/contact/:contact_id/profile'
+          element={<ContactDetailScreen/>}
+        />
+
+
+      </Route>
+      
       <Route 
         path='/*'
         element={<NotFoundScreen/>}
